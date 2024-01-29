@@ -22,4 +22,17 @@ public class AlienDao {
         return aliens;
     }
 
+    @Transactional
+    public void addAlien(Alien alien) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(alien);
+
+    }
+
+    @Transactional
+    public Alien getAlien(int aid) {
+        Session session = sessionFactory.getCurrentSession();
+        Alien alien = session.get(Alien.class, aid);
+        return alien;
+    }
 }

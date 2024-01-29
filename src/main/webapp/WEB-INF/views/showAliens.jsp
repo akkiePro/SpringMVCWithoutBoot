@@ -10,5 +10,6 @@
 <body>
     Welcome to Akkieans.<br>
     Result is: ${result}<br>
+    <a href="http://localhost:8080/SpringMVCWithoutBoot/">Home</a>
 </body>
 </html>

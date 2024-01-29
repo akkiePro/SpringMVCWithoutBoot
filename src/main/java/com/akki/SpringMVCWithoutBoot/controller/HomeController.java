@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,13 +30,20 @@ public class HomeController {
     }
 
     @PostMapping("addAlien")
-    public String addAlien(@ModelAttribute Alien alien, Model m) {
+    public String addAlien(@ModelAttribute("result") Alien alien) {
+        dao.addAlien(alien);
         return "result";
     }
 
     @GetMapping("getAliens")
     public String getAliens(Model m) {
         m.addAttribute("result", dao.getAliens());
+        return "showAliens";
+    }
+
+    @GetMapping("getAlien")
+    public String getAlien(@RequestParam int aid, Model m) {
+        m.addAttribute("result", dao.getAlien(aid));
         return "showAliens";
     }
 }

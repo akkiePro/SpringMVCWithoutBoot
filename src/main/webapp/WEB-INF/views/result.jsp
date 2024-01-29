@@ -9,7 +9,8 @@
 </head>
 <body>
     Welcome to Akkieans.<br>
-    Result is: ${alien}<br>
-    default is: ${name}
+    Result is: ${result}<br>
+    default is: ${name}<br>
+    <a href="http://localhost:8080/SpringMVCWithoutBoot/">add more</a>
 </body>
 </html>
